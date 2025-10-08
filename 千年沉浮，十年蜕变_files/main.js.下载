@@ -1,0 +1,758 @@
+$(function() {
+
+	OpenAni();
+
+	function OpenAni() {
+		setTimeout(function() {
+			$(".open_img").addClass("animated fadeOut");
+			$("#mainPart").show();
+			DyhSwiper("#picSwEcology");
+			DyhSwiper("#picSwCulture");
+			setTimeout(function() {
+				$(".pic_painting").show();
+				$("#openScreen").hide();
+				setTimeout(function() {
+					$(".txt_bub").show();
+				}, 500);
+			}, 500);
+		}, 5000);
+	}
+
+	$("#btnSkip").click(function() {
+		$(".open_img").addClass("animated fadeOut");
+		$("#mainPart").show();
+		DyhSwiper("#picSwEcology");
+		DyhSwiper("#picSwCulture");
+		setTimeout(function() {
+			$(".pic_painting").show();
+			$("#openScreen").hide();
+			setTimeout(function() {
+				$(".txt_bub").show();
+			}, 500);
+		}, 500);
+	});
+
+
+	$(".point_history").click(function() {
+		var DataPoint = $(this).attr("data-point");
+		console.log(DataPoint);
+
+		$(this).hide();
+		$(".point_" + DataPoint + "").show();
+	});
+
+	$(".point_place").click(function() {
+		var DataPlace = $(this).attr("data-place");
+		console.log(DataPlace);
+		$(this).hide();
+		$("#policy_" + DataPlace + "").show();
+	});
+
+	// ★视频
+	var dyhVideo = document.getElementById("dyhVideo");
+	$("#playBtn").click(function() {
+		dyhVideo.play();
+		$("#playBtn").hide();
+	});
+
+	$("#dyhVideo").click(function() {
+		dyhVideo.pause();
+		//$("#playBtn").show();
+	});
+
+	dyhVideo.addEventListener('ended', function(event) {
+		console.log("视频播放结束！");
+		$("#playBtn").show();
+	});
+
+	DyhSwiper("#picSwEcology");
+	DyhSwiper("#picSwCulture");
+
+	function DyhSwiper(picSwiperID) {
+		var mySwiper = new Swiper(picSwiperID, {
+			effect: 'coverflow',
+			slidesPerView: 2.5,
+			centeredSlides: true,
+			coverflowEffect: {
+				rotate: 30,
+				stretch: 30,
+				depth: 100,
+				modifier: 1,
+				slideShadows: false,
+			},
+			loop: true,
+			scrollbar: { // 滚动条
+				el: '.swiper-scrollbar',
+			},
+			autoplay: true,
+			//autoplay: {
+			//	delay: 3000,
+			//	stopOnLastSlide: false,
+			//	disableOnInteraction: true,
+			//},
+		})
+	}
+
+
+	var colors0 = ['#0E1D27', '#2E3B41', ]; //文本、线条
+	var colors1 = ['#3E8295', '#96D1E1', '#DEEAED']; //20%
+	var colors2 = ['#1E7386', '#3F8898', '#629DAB', '#83B2BD', '#A5C7CF', '#BCD5DB', '#D2E3E7']; //20%
+	var colors3 = ['#3E8295', '#428193', '#498393', '#568998', '#64909D', '#759BA8', '#8AAAB3', '#A2BAC1', '#C0CFD4', '#D9E3E6', ]; //20%
+
+
+	// ★ Chart：世界运河长度排名
+	var dom = document.getElementById('WorldCanal');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	var option;
+	option = {
+		tooltip: {
+			trigger: 'axis',
+			textStyle: {
+				fontSize: 20,
+			}
+		},
+		grid: {
+			top: 20,
+			left: 10,
+			right: 10,
+			bottom: 10,
+			containLabel: true,
+		},
+		polar: {
+			center: ['58%', '52%'],
+			radius: [0, '93%']
+		},
+		angleAxis: {
+			max: 5000,
+			startAngle: 90,
+			axisLine: {
+				show: false,
+			},
+			axisTick: {
+				show: false,
+			},
+			axisLabel: {
+				show: false,
+			},
+			splitLine: {
+				show: false,
+			},
+		},
+		radiusAxis: {
+			type: 'category',
+			name: "单位：长度（公里）",
+			nameTextStyle: {
+				color: colors0[0],
+				fontSize: 14,
+				align: 'left',
+				padding: [0, 0, 0, 100],
+			},
+			nameGap: -10,
+			axisLine: {
+				show: false,
+			},
+			axisTick: {
+				show: false,
+			},
+			axisLabel: {
+				show: false,
+				interval: 0,
+				color: colors0[0],
+				fontSize: 18,
+				fontWeight: 500,
+			},
+			data: [
+				'巴拿马 巴拿马运河',
+				'俄罗斯 伏尔加-顿运河',
+				'德国 莱茵-多瑙运河',
+				'埃及 苏伊士运河',
+				'俄罗斯 白海-波罗的海运河',
+				'法国 大西洋-地中海运河',
+				'加拿大/美国 圣劳伦斯海道',
+				'美国 伊利运河',
+				'土库曼斯坦 卡拉库姆运河',
+				'中国 大运河',
+			],
+			//data: [82, 101, 171, 193, 227, 240, 370, 584, 1375, 3200],
+		},
+		graphic: [{
+			type: 'text',
+			left: 'center',
+			bottom: 100,
+			style: {
+				text: '数据来源：综合资料整理',
+				//opacity: 0.4,
+				fill: '#666666',
+				fontSize: 14,
+			}
+		}, {
+			type: 'image',
+			left: 38,
+			top: 0,
+			style: {
+				image: 'https://h5.bjnews.com.cn/2024dayunhe_pc/img/shijieyunhe_label.png?v=021902',
+				width: 444,
+				height: 450,
+			}
+		}],
+		series: {
+			type: 'bar',
+			data: [82, 101, 171, 193, 227, 240, 316, 584, 1375, 3200],
+			coordinateSystem: 'polar',
+			itemStyle: {
+				color: function(params) {
+					const colorsMap = [
+						colors3[10], colors3[9], colors3[8], colors3[7], colors3[6], colors3[5], colors3[4], colors3[3], colors3[2], colors3[1], colors3[0],
+					]
+					return colorsMap[params.dataIndex];
+				}
+			},
+			label: {
+				//show: true,
+				//position: 'top',
+				formatter: '{b} {c}'
+			}
+		}
+	};
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+	window.addEventListener('resize', myChart.resize);
+
+
+	var dom = document.getElementById('shipCargo');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	var option;
+	const spirit =
+		'image://data:image/png;base64,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'
+	option = {
+		tooltip: {
+			trigger: 'axis',
+			textStyle: {
+				fontSize: 20,
+			}
+		},
+		grid: {
+			top: 30,
+			left: 10,
+			right: 10,
+			bottom: 10,
+			containLabel: true,
+		},
+		xAxis: {
+			data: ['明成化期间', '万历年间', '清雍正年间', '嘉庆年间'],
+			axisTick: {
+				show: false
+			},
+			axisLine: {
+				show: false
+			},
+			axisLabel: {
+				margin: 15,
+				color: '#FFFFFF',
+				fontSize: 20
+			}
+		},
+		yAxis: {
+			type: 'value',
+			name: "载货重量（斤）",
+			nameTextStyle: {
+				color: colors0[0],
+				fontSize: 16,
+				padding: [0, 0, 0, 200],
+			},
+			nameGap: 0,
+			axisTick: {
+				show: false
+			},
+			axisLine: {
+				show: false
+			},
+			axisLine: {
+				show: false
+			},
+			axisLabel: {
+				show: false
+			},
+			splitLine: {
+				show: false
+			}
+		},
+		series: [{
+			type: 'pictorialBar',
+			label: {
+				show: false,
+				position: 'top',
+				color: colors1[0],
+				fontSize: 24,
+			},
+			symbol: spirit,
+			//symbol: spirit || circle,
+			symbolRepeat: true,
+			//symbolMargin: '6%',
+			//symbolClip: true,
+			symbolSize: [130, 20],
+			data: [1535, 9120, 10000, 15000],
+			markLine: {
+				symbol: 'none',
+				label: {
+					formatter: 'max: {c}',
+					position: 'start'
+				},
+				lineStyle: {
+					color: 'green',
+					type: 'dotted',
+					opacity: 0.2,
+					width: 2
+				},
+			},
+			z: 10
+		}, ]
+	};
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+	window.addEventListener('resize', myChart.resize);
+
+	// 大运河流经的主要城市——人口和贸易变化
+	// 北京
+	var DataChzhBeiJing = [1538, 1601, 1676, 1771, 1860, 1961.9, 2023.8, 2077.5, 2125.4, 2171.1, 2188.3, 2195.4, 2194.4, 2191.7, 2190.1, 2189.31, 2188.6, 2184.3, 2185.8, ];
+	var DataHujiBeiJing = [1184.14, 1197.6, 1213.3, 1229.9, 1245.83, 1257.8, 1277.92, 1297.46, 1316.34, 1333.4, 1345.27, 1362.86, 1359.19, 1375.83, 1392.1, 1395.48, 1408.76, 1425.62, ];
+	var DataTradeBeiJing = [10286.4, 12609.2, 14671.6, 18870.7, 14677.4, 20408.5, 25156.7, 25749.7, 26575.2, 25532.8, 19907.1, 18733.4, 21856.9, 27290.2, 28709.1, 23109.7, 30388.1, 36750.7, ];
+	// 天津
+	var DataChzhTianjin = [1042.53, 1075, 1115, 1176, 1228.16, 1299.29, 1341, 1378, 1410, 1429, 1439, 1443, 1410, 1383, 1385, 1386.84, 1373, 1363, 1364, ];
+	var DataHujiTianjin = [942.99, 948.89, 959.1, 968.87, 979.84, 984.85, 996.44, 993.2, 1003.97, 1016.66, 1026.9, 1044.4, 1049.99, 1081.63, 1105.04, 1130.68, 1151.56, 1161.3, ];
+	var DataTradeTianjin = [4366.6, 5140.5, 5438.7, 5580.6, 4360.7, 5564.6, 6677.8, 7298.7, 7960.0, 8225.9, 7122.0, 6818.5, 7625.8, 8108.8, 7357.3, 7306.7, 8552.4, 8525.9, ];
+	// 沧州
+	var DataChzhCangZhou = [684, 689, 692.88, 697.84, 702.88, 714.33, 718.02, 719.84, 723.52, 727.4, 730.57, 733.08, 734.66, 727.7, 728.91, 730.22, 730.4, 731.48, 726.46, ];
+	var DataHujiCangZhou = [684.75, 690.85, 700.2, 710.1, 717.5, 730.89, 734.82, 744.36, 754.32, 768.37, 774.36, 779.54, 777.83, 783.13, 787.12, 782.36, 780.67, 781.36, ];
+	var DataTradeCangZhou = [66.9, 84.7, 104.7, 132.4, 92.2, 113.6, 138.7, 147.3, 159.2, 190.7, 171.6, 190.2, 247.2, 317.3, 371.1, 318.3, 373.8, 482.0, 468.4, ];
+	// 德州
+	var DataChzhDeZhou = [537.53, 541.9, 545.28, 548.94, 553.07, 557.42, 560.31, 563.1, 567.11, 570.51, 574.23, 579.23, 579.58, 581, 574.85, 561.36, 560, 557.49, 553.63, ];
+	var DataHujiDeZhou = [552.63, 557.85, 561.67, 564.19, 569.01, 570.18, 575.98, 577.52, 578.81, 583.2, 587.27, 592.98, 595.35, 597.84, 598.61, 597.8, 596.08, 593.64, ];
+	var DataTradeDeZhou = [60.2, 65.9, 79.2, 107.5, 98.1, 131.7, 173.5, 171.6, 219.1, 215.4, 197.7, 209.1, 244.5, 292.8, 345.4, 386.9, 513.6, 622.1, 698.5, ];
+	// 聊城
+	var DataChzhLiaoCheng = [546.07, 550.38, 553.66, 557.09, 560.96, 579.77, 584.63, 589.33, 591.13, 593.57, 597.06, 603.68, 606.43, 607.45, 609.83, 595.25, 592.79, 590.26, 585.93, ];
+	var DataHujiLiaoCheng = [569.5, 572.82, 580.75, 584.91, 590.89, 597.53, 604.22, 594.45, 597.52, 612.13, 622.34, 632.52, 639.69, 644.7, 646.45, 648.28, 648.31, 642.22, ];
+	var DataTradeLiaoCheng = [52.3, 79.3, 130.8, 201.8, 151.7, 245.9, 365.2, 353.0, 383.3, 353.4, 316.0, 370.4, 456.8, 487.0, , 404.2, 530.4, , 591.9, ];
+	// 泰安
+	var DataChzhTaiAn = [538.63, 540.9, 543.34, 545.62, 548.02, 549.84, 549.7, 547.6, 548.2, 547.3, 548.3, 550, 550.3, 549.1, 549, 547.85, 543.49, 540.1, 534.87, ];
+	var DataHujiTaiAn = [550.78, 551.7, 552.57, 554.72, 555.83, 557.01, 559.51, 558.87, 558.8, 562.32, 565.71, 568.66, 571.34, 572.98, 573.03, 570.77, 569.36, 564.5, ];
+	var DataTradeTaiAn = [61.0, 78.5, 102.7, 104.9, 73.8, 107.6, 117.6, 136.4, 153.9, 182.7, 142.2, 132.4, 152.2, 157.5, 172.2, 211.9, 291.1, , 457.6, ];
+	// 济宁
+	var DataChzhJiNing = [781.72, 787.09, 791.66, 796.7, 803.18, 808.19, 813.2, 813.7, 815.1, 817.8, 829.92, 835.44, 837.59, 834.59, 835.6, 836.07, 833.65, 829.06, 824.05, ];
+	var DataHujiJiNing = [805.78, 811.83, 818.27, 822.75, 831.31, 843.03, 846.98, 847.08, 847.79, 860.12, 867.44, 875.73, 883.21, 890.73, 892.88, 894.16, 894.52, 888.38, ];
+	var DataTradeJiNing = [153.0, 186.9, 214.1, 227.0, 197.4, 302.3, 371.4, 322.9, 323.9, 321.4, 338.6, 357.7, 409.9, 423.8, 461.8, 545.1, 678.7, , 971.5, ];
+	// 枣庄
+	var DataChzhZaoZhuang = [359.82, 362.4, 364.04, 365.04, 366.52, 373.38, 375.27, 377.2, 380.1, 383.09, 387.8, 391.56, 392.03, 392.73, 393.3, 385.86, 385.31, 382.97, 380.98, ];
+	var DataHujiZaoZhuang = [367.27, 371.97, 380.19, 383.24, 386.79, 391.04, 394.18, 394.83, 395.96, 401.33, 407.77, 413.23, 418.05, 422.56, 424.15, 426.11, 426.44, 422.14, ];
+	var DataTradeZaoZhuang = [30.5, 37.8, 48.9, 46.5, 40.6, 61.7, 69.0, 71.4, 77.5, 88.5, 99.3, 88.9, 100.2, 105.5, 146.7, 263.8, 315.1, , 513.1, ];
+	// 徐州
+	var DataChzhXuZhou = [882.54, 876.48, 871.12, 869.21, 868.19, 858.21, 859.23, 860.35, 865.03, 873.76, 878.86, 888.05, 898.42, 903.35, 906.28, 908.39, 902.85, 901.85, 902, ];
+	var DataHujiXuZhou = [925.31, 934.73, 940.95, 946.86, 957.61, 972.89, 976.66, 990.53, 1006.85, 1023.52, 1028.7, 1042.4, 1039.42, 1044.77, 1041.73, 1038.05, 1035.29, 1031.9, 1029.36, ];
+	var DataTradeXuZhou = [, 147.7, 189.9, 239.8, 157.1, 281.7, 407.6, 525.6, 389.5, 367.8, 337.1, 415.0, 526.7, 777.1, 932.6, 1064.5, 1252.7, ];
+	// 宿迁
+	var DataChzhSuQian = [495.2, 488.71, 481.03, 474.65, 472.51, 472.28, 476.64, 479.8, 485.91, 490.32, 492.38, 493.94, 496.46, 496.59, 497.28, 498.82, 499.9, 497.53, 497.75, ];
+	var DataHujiSuQian = [524.54, 529.47, 531.53, 534.58, 540.6, 546.28, 555.05, 560.26, 572.11, 580.74, 586.28, 591.6, 591.01, 591.26, 592.36, 592.1, 590.86, 588.03, 585.41, ];
+	var DataTradeSuQian = [12.5, 18.3, 23.5, 33.1, 42.6, 82.6, 133.7, 176.3, 205.7, 230.7, 161.9, 160.9, 199.0, 238.3, 236.3, 329.9, 449.5, 564.5, 621.0, ];
+	// 淮安
+	var DataChzhHuaiAn = [498, 492.43, 485.72, 482.33, 481.49, 480.4, 480.34, 480.3, 482.69, 485.21, 487.2, 489, 491.4, 492.5, 464.09, 455.92, 456.22, 455.31, 453.8, ];
+	var DataHujiHuaiAn = [527.77, 532.76, 534, 536.91, 534.16, 538.74, 543.24, 546.81, 552.96, 560.25, 564.45, 567.56, 560.9, 561.33, 560.48, 557.97, 555.25, 551.11, 547.31, ];
+	var DataTradeHuaiAn = [55.9, 81.5, 110.1, 123.0, 146.2, 147.0, 184.3, 267.5, 226.7, 252.2, 257.2, 232.7, 313.0, 331.5, 324.6, 343.8, 386.4, 432.5, 540.6, ];
+	// 扬州
+	var DataChzhYangZhou = [451.14, 445.91, 445.97, 447.12, 449.55, 446.08, 446.3, 446.72, 447, 447.79, 448.36, 449.14, 450.82, 453.1, 454.9, 456.1, 457.7, 458.29, 458.5, ];
+	var DataHujiYangZhou = [456.31, 458.64, 459.25, 459.79, 458.8, 459.12, 460.05, 458.42, 459.84, 461.34, 461.12, 461.67, 459.98, 458.83, 457.14, 454.71, 451.56, 448.46, 445.04, ];
+	var DataTradeYangZhou = [, 260.2, 339.1, 429.2, 371.2, 557.8, 654.9, 642.2, 588.8, 615.0, 643.9, 633.6, 729.1, 793.6, 779.9, 766.0, 967.6, ];
+	// 镇江
+	var DataChzhZhenJiang = [296.2, 299.56, 301.93, 304.07, 306.94, 311.45, 313.43, 315.48, 316.54, 317.14, 317.65, 318.13, 318.63, 319.64, 320.35, 321.1, 321.72, 322.22, 322.6, ];
+	var DataHujiZhenJiang = [267.61, 268.79, 268.78, 268.77, 269.88, 270.71, 271.86, 271.4, 271.75, 272.07, 271.67, 271.98, 270.9, 270.78, 270.16, 269.25, 268.1, 266.86, 264.77, ];
+	var DataTradeZhenJiang = [324.8, 380.6, 479.4, 518.2, 412.4, 552.0, 650.7, 720.4, 616.2, 633.1, 626.8, 685.3, 711.4, 783.4, 772.8, 718.9, 833.1, 1050.3, 989.5, ];
+	// 常州
+	var DataChzhChangZhou = [412.8, 425.69, 435.23, 440.71, 445.18, 459.33, 464.97, 468.68, 469.21, 469.64, 516.66, 470.83, 471.73, 472.86, 473.6, 527.96, 534.96, 536.62, 537.5, ];
+	var DataHujiChangZhou = [351.63, 354.67, 357.38, 358.74, 359.82, 360.8, 362.86, 364.77, 365.91, 368.64, 370.85, 374.9, 378.84, 382.2, 385.02, 386.63, 388.16, 389.21, 389.34, ];
+	var DataTradeChangZhou = [, 833.0, 1005.7, 1223.5, 1029.8, 1508.1, 1849.3, 1832.4, 1809.3, 1769.7, 1746.5, 1832.0, 2111.0, 2266.4, 2334.1, 2408.3, 3013.0, 3262.0, ];
+	// 无锡
+	var DataChzhWuXi = [559.51, 584.17, 599.21, 610.73, 619.57, 637.56, 669.92, 690.61, 701.39, 717.7, 723.98, 731.32, 738.76, 742.53, 745.36, 746.4, 747.95, 749.08, 749.5, ];
+	var DataHujiWuXi = [452.84, 457.8, 461.74, 464.2, 465.65, 466.56, 467.96, 470.07, 472.23, 477.14, 480.9, 486.2, 493.05, 497.21, 502.83, 508.97, 515.25, 519.01, 520.95, ];
+	var DataTradeWuXi = [2391.0, 3124.4, 3890.0, 3884.4, 3000.0, 4144.5, 4680.2, 4467.5, 4358.2, 4556.1, 4264.4, 4636.7, 5486.0, 6183.6, 6376.3, 6055.1, 6819.3, 7442.6, 7076.1, ];
+	// 苏州
+	var DataChzhSuZhou = [757.7, 809.86, 882.12, 912.65, 936.95, 1046.85, 1110.87, 1159.42, 1193.35, 1222.57, 1230.55, 1253.66, 1261.9, 1266.69, 1270.75, 1274.96, 1284.78, 1291.1, 1295.8, ];
+	var DataHujiSuZhou = [607.31, 616.08, 624.43, 629.75, 633.29, 637.66, 642.33, 647.81, 653.84, 661.08, 667.01, 678.2, 691.07, 703.55, 722.6, 744.33, 762.11, 774.7, ];
+	var DataTradeSuZhou = [11516.6, 13891.5, 16104.2, 15871.3, 13760.9, 18553.6, 19432.1, 19296.8, 19158.5, 19122.9, 19018.4, 18183.8, 21341.0, 23375.6, 22012.1, 22234.2, 25297.2, 26003.2, 24541.4, ];
+	// 嘉兴
+	var DataChzhJiaXing = [399.6, 408, 418.6, 424.3, 431.8, 450.5, 453.1, 454.4, 455.8, 457, 458.5, 461.4, 465.6, 472.6, 533.5, 541.1, 551.6, 555.1, 558.4, ];
+	var DataHujiJiaXing = [334.33, 335.55, 336.81, 338.07, 339.6, 341.6, 343.05, 344.52, 345.93, 348.14, 349.48, 352.12, 356.37, 360.44, 363.7, 367.38, 371.85, 374.85, 376.76, ];
+	var DataTradeJiaXing = [812.8, 1008.8, 1221.4, 1377.4, 1175.2, 1544.8, 1839.7, 1814.5, 1967.1, 2080.6, 1928.4, 2068.0, 2469.7, 2821.2, 2832.2, 3052.3, 3783.8, 4400.0, 4409.9, ];
+	// 杭州
+	var DataChzhHangZhou = [771.3, 773.1, 786.2, 820.2, 833.4, 870, 873.8, 880.2, 884.4, 1013.5, 1038, 1061, 1092.1, 1125.4, 1161.3, 1196.5, 1220.4, 1237.6, 1252.2, ];
+	var DataHujiHangZhou = [660.45, 666.31, 672.35, 677.64, 683.38, 689.12, 695.71, 700.52, 706.61, 715.76, 723.55, 736, 753.88, 774.1, 795.37, 813.83, 834.54, 846.7, 860.6, ];
+	var DataTradeHangZhou = [2446.9, 3101.7, 3302.1, 3338.2, 2760.9, 3544.2, 4131.8, 3893.7, 4030.0, 4177.0, 4146.0, 4480.0, 5085.0, 5245.3, 5597.0, 5934.0, 7369.0, 7565.0, 8029.7, ];
+
+	$(".dot_city").click(function() {
+		$("#maskHumanTrade").show();
+		$("#chartBoxHumantrade").show();
+		var dataCity = $(this).attr("data-city");
+		var dataTitle = $(this).attr("data-title");
+		console.log(dataCity);
+		console.log(dataTitle);
+		$("#titleCity").html(dataTitle);
+		EchartHuman(eval("DataChzh" + dataCity + ""), eval("DataHuji" + dataCity + ""));
+		EchartTrade(eval("DataTrade" + dataCity + ""));
+	});
+
+	$("#btnCloseHumantrade").click(function() {
+		$("#maskHumanTrade").hide();
+		$("#chartBoxHumantrade").hide();
+	});
+
+
+	EchartHuman(DataChzhBeiJing, DataHujiBeiJing);
+	EchartTrade(DataTradeBeiJing);
+
+	// ★ Chart：常住人口VS户籍人口
+	function EchartHuman(DataChzhCity, DataHujiCity) {
+		var dom = document.getElementById('humanCanal');
+		var myChart = echarts.init(dom, null, {
+			renderer: 'canvas',
+			useDirtyRect: false
+		});
+		var app = {};
+		var option;
+		option = {
+			//animationDuration: 3000,
+			grid: {
+				top: 30,
+				left: 5,
+				right: 10,
+				bottom: 0,
+				containLabel: true,
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'shadow'
+				},
+			},
+			legend: {
+				data: ['常住人口（万人）', '户籍人口（万人）'],
+				itemWidth: 10,
+				itemHeight: 10,
+				right: 0,
+				textStyle: {
+					fontSize: 14,
+				}
+			},
+			calculable: true,
+			xAxis: [{
+				type: 'category',
+				axisLine: {
+					lineStyle: {
+						width: 0.75,
+						color: colors0[1],
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					interval: 0,
+					rotate: 30,
+					fontSize: 14,
+				},
+				data: ['2005年', '2006年', '2007年', '2008年', '2009年', '2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年', '2019年', '2020年', '2021年', '2022年', '2023年', ],
+			}],
+			yAxis: [{
+				type: 'value',
+				name: "单位（万人）",
+				nameTextStyle: {
+					color: colors0[0],
+					fontSize: 14,
+					padding: [0, 0, 0, 110],
+				},
+				nameGap: 10,
+				axisLine: {
+					show: true,
+					lineStyle: {
+						width: 0.75,
+						color: colors0[1],
+					}
+				},
+				axisLabel: {
+					interval: 0,
+					rotate: 30,
+					fontSize: 14,
+				},
+				splitLine: {
+					lineStyle: {
+						color: colors0[1],
+						width: 0.75,
+						type: 'dashed',
+						opacity: 0.5,
+					}
+				},
+			}],
+			series: [{
+					name: '常住人口（万人）',
+					type: 'bar',
+					color: colors1[0],
+					barGap: 0,
+					data: DataChzhCity,
+				},
+				{
+					name: '户籍人口（万人）',
+					type: 'bar',
+					color: colors1[1],
+					data: DataHujiCity,
+				}
+			]
+		};
+		if (option && typeof option === 'object') {
+			myChart.setOption(option);
+		}
+		window.addEventListener('resize', myChart.resize);
+	}
+
+	// ★ Chart：进出口总额
+	function EchartTrade(DataTradeCity) {
+		var dom = document.getElementById('tradeCanal');
+		var myChart = echarts.init(dom, null, {
+			renderer: 'canvas',
+			useDirtyRect: false
+		});
+		var app = {};
+		var option;
+		option = {
+			//animationDuration: 3000,
+			grid: {
+				top: 30,
+				left: 5,
+				right: 10,
+				bottom: 0,
+				containLabel: true,
+			},
+			tooltip: {
+				trigger: 'axis'
+			},
+			calculable: true,
+			xAxis: {
+				type: 'category',
+				axisLine: {
+					lineStyle: {
+						width: 0.75,
+						color: colors0[1],
+					}
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					interval: 0,
+					rotate: 30,
+					fontSize: 14,
+				},
+				splitLine: {
+					show: true,
+					lineStyle: {
+						color: colors0[1],
+						width: 0.75,
+						type: 'dashed',
+						opacity: 0.5,
+					}
+				},
+				data: ['2005年', '2006年', '2007年', '2008年', '2009年', '2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年', '2019年', '2020年', '2021年', '2022年', '2023年', ],
+			},
+			yAxis: {
+				type: 'value',
+				name: "进出口总额（亿元）",
+				nameTextStyle: {
+					color: colors0[0],
+					fontSize: 14,
+					padding: [0, 0, 0, 160],
+				},
+				nameGap: 5,
+				axisLine: {
+					show: true,
+					lineStyle: {
+						width: 0.75,
+						color: colors0[1],
+					}
+				},
+				splitLine: {
+					lineStyle: {
+						color: colors0[1],
+						width: 0.75,
+						type: 'dashed',
+						opacity: 0.5,
+					}
+				},
+				axisLabel: {
+					interval: 0,
+					rotate: 30,
+					fontSize: 14,
+				},
+			},
+			series: [{
+				data: DataTradeCity,
+				type: 'line',
+				symbol: 'circle',
+				symbolSize: 9,
+				itemStyle: {
+					color: colors1[0],
+					borderColor: '#FFFFFF',
+					borderWidth: 2,
+				},
+				lineStyle: {
+					color: colors1[0],
+					width: 2,
+				},
+				areaStyle: {
+					color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							offset: 0,
+							color: colors1[0],
+						},
+						{
+							offset: 1,
+							color: colors1[2],
+						}
+					])
+				},
+			}]
+		};
+		if (option && typeof option === 'object') {
+			myChart.setOption(option);
+		}
+		window.addEventListener('resize', myChart.resize);
+	}
+
+	// ★ Chart：京杭大运河江苏段2018年货运量
+	var dom = document.getElementById('jiangsuTransport');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	var option;
+	option = {
+		color: colors2,
+		// grid: {
+		// 	top: 30,
+		// 	left: 5,
+		// 	right: 10,
+		// 	bottom: 0,
+		// 	containLabel: true,
+		// },
+		tooltip: {
+			trigger: 'item',
+			textStyle: {
+				fontSize: 20,
+			}
+		},
+		legend: {
+			itemWidth: 16,
+			itemHeight: 16,
+			itemGap: 16,
+			orient: 'vertical',
+			right: 80,
+			top: 90,
+			textStyle: {
+				fontSize: 16,
+			}
+		},
+		graphic: [{
+			type: 'text',
+			right: 30,
+			bottom: 10,
+			style: {
+				text: '数据来源：江苏省交通运输厅',
+				//opacity: 0.4,
+				fill: '#666666',
+				fontSize: 14,
+			}
+		}],
+		series: [{
+			name: '总货运量：4.8亿吨',
+			type: 'pie',
+			padAngle: 1,
+			radius: ['50%', '90%'],
+			center: ['32%', '50%'],
+			avoidLabelOverlap: false,
+			left: 0,
+			label: {
+				show: true,
+				position: 'center',
+				formatter: [
+					'{a|总货运量}',
+					'{b|4.8亿吨}'
+				].join('\n'),
+				rich: {
+					a: {
+						color: colors0[0],
+						fontSize: 16,
+						fontWeight: 'bold',
+						lineHeight: 20,
+
+					},
+					b: {
+						color: colors2[0],
+						fontSize: 20,
+						fontWeight: 'bold',
+						lineHeight: 30,
+					},
+				}
+			},
+			emphasis: {
+				label: {
+					show: true,
+					fontSize: 20,
+					fontWeight: 'bold'
+				}
+			},
+			labelLine: {
+				//show: false
+			},
+			data: [{
+					value: 0.37,
+					name: '钢材'
+				},
+				{
+					value: 0.15,
+					name: '水泥'
+				},
+				{
+					value: 0.12,
+					name: '金属矿'
+				},
+				{
+					value: 0.09,
+					name: '粮食'
+				},
+				{
+					value: 1.16,
+					name: '沙土等矿建材'
+				},
+				{
+					value: 1.4,
+					name: '煤炭'
+				},
+				{
+					value: 1.51,
+					name: '其他'
+				}
+			]
+		}]
+	};
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+	window.addEventListener('resize', myChart.resize);
+
+
+})

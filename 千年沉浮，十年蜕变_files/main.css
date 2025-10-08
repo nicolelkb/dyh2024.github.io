@@ -1,0 +1,943 @@
+.wrapper {
+  width: 1280px;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  padding: 60px 0 30px 0;
+  overflow: hidden;
+}
+.wrapper .hover_hand:hover {
+  cursor: pointer;
+}
+.wrapper .part {
+  width: 100%;
+  margin-bottom: 120px;
+}
+.wrapper .part .title {
+  width: 100%;
+}
+.wrapper .part .part_title {
+  margin-bottom: 70px;
+}
+.wrapper .part .sub_title {
+  margin-bottom: 30px;
+}
+.wrapper .part .sort_title {
+  margin-bottom: 30px;
+}
+.wrapper .part .chart_img_box,
+.wrapper .part .map_box,
+.wrapper .part .chart_box,
+.wrapper .part .pic_box {
+  background-color: #FFFFFF;
+  border: 2px solid #1E7386;
+  box-shadow: 5px 5px 10px rgba(30, 115, 128, 0.75);
+  padding: 15px 0;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+.wrapper .part .chart_img_box .common_tit,
+.wrapper .part .map_box .common_tit,
+.wrapper .part .chart_box .common_tit,
+.wrapper .part .pic_box .common_tit {
+  display: block;
+  height: 42px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.wrapper .part .chart_img_box .chart_img,
+.wrapper .part .map_box .chart_img,
+.wrapper .part .chart_box .chart_img,
+.wrapper .part .pic_box .chart_img,
+.wrapper .part .chart_img_box .map_bg,
+.wrapper .part .map_box .map_bg,
+.wrapper .part .chart_box .map_bg,
+.wrapper .part .pic_box .map_bg,
+.wrapper .part .chart_img_box .map_img,
+.wrapper .part .map_box .map_img,
+.wrapper .part .chart_box .map_img,
+.wrapper .part .pic_box .map_img,
+.wrapper .part .chart_img_box .pic_img,
+.wrapper .part .map_box .pic_img,
+.wrapper .part .chart_box .pic_img,
+.wrapper .part .pic_box .pic_img,
+.wrapper .part .chart_img_box .chart,
+.wrapper .part .map_box .chart,
+.wrapper .part .chart_box .chart,
+.wrapper .part .pic_box .chart {
+  display: block;
+  margin: 0 auto;
+}
+.wrapper .part .map_box {
+  padding: 15px 12px;
+}
+.wrapper .part .map_box .tit {
+  display: block;
+  height: 42px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+.wrapper .part .map_box .map {
+  margin: 0 auto;
+}
+.wrapper .part .small_box {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3.2px solid #1E7386;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px rgba(30, 115, 128, 0.75);
+  padding: 10px;
+  position: absolute;
+}
+.wrapper .part .txt_box {
+  width: 98%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.wrapper .part .txt_box .main_txt {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.wrapper .part .txt_box .main_txt .first_word {
+  color: #8C8C8C;
+  font-size: 28px;
+  font-weight: 600;
+}
+.wrapper .part .txt_caption {
+  color: #1E7386;
+  font-size: 16px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+.wrapper .part .caption_top {
+  margin-bottom: 10px;
+}
+.wrapper .part .caption_bot {
+  margin-bottom: 70px;
+}
+.open_screen {
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/open_bg.jpg) no-repeat center / cover;
+  background-color: #E6E0D8;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.open_screen .open_img {
+  width: auto;
+  height: 110%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.open_screen .btn_skip {
+  width: 80px;
+  height: 36px;
+  position: absolute;
+  right: 80px;
+  bottom: 40px;
+}
+#Part_0 .part0_dayunhe_box {
+  width: 100%;
+  height: 690px;
+  position: relative;
+}
+#Part_0 .part0_dayunhe_box .map_dayunhe {
+  width: 480px;
+  height: 670px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#Part_0 .part0_dayunhe_box .pic_painting {
+  width: 760px;
+  height: 380px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+#Part_0 .part0_dayunhe_box .txt_bub {
+  width: 830px;
+  height: 240px;
+  background: url(../img/txt_bub_1.png) no-repeat center / contain;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+#Part_0 .part0_dayunhe_box .txt_bub .txt_box {
+  width: 640px;
+  position: absolute;
+  right: 70px;
+  top: 50px;
+}
+#Part_1 .caption_shijieyunhe {
+  width: 860px;
+}
+#Part_1 .chart_box_shijieyunhe {
+  width: 860px;
+  height: 750px;
+}
+#Part_1 .chart_box_shijieyunhe #WorldCanal {
+  width: 830px;
+  height: 640px;
+}
+#Part_1 .map_box_xiujianjifazhan {
+  position: relative;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan {
+  width: 534px;
+  height: 1040px;
+  background: url(../img/map_bg_xiujianjifazhan.png) no-repeat center / contain;
+  position: relative;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_history {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  animation-duration: 2s;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_1 {
+  width: 30px;
+  height: 30px;
+  left: 205px;
+  top: 174px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_2 {
+  left: 170px;
+  top: 245px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_3 {
+  left: 80px;
+  top: 385px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_4 {
+  left: 184px;
+  top: 390px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_5 {
+  left: 150px;
+  top: 490px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_6 {
+  width: 50px;
+  height: 50px;
+  left: 300px;
+  top: 520px;
+}
+#Part_1 .map_box_xiujianjifazhan .map_bg_xiujianjifazhan .point_7 {
+  left: 360px;
+  top: 620px;
+}
+#Part_1 .map_box_xiujianjifazhan .history_box {
+  width: 320px;
+  position: absolute;
+}
+#Part_1 .map_box_xiujianjifazhan .history_box .history_time {
+  color: #135C5C;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 30px;
+}
+#Part_1 .map_box_xiujianjifazhan .history_box .history_content {
+  color: #231815;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 24px;
+}
+#Part_1 .map_box_xiujianjifazhan .history_box .icon_close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_ChunQiu {
+  right: 30px;
+  top: 740px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_ZhanGuo {
+  left: 20px;
+  top: 620px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_QinHan {
+  right: 30px;
+  top: 320px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_SuiTang {
+  left: 20px;
+  top: 420px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_BeiSong {
+  left: 20px;
+  top: 100px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_NanSong {
+  right: 30px;
+  top: 900px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_YuanChao {
+  right: 30px;
+  top: 90px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_MingDai {
+  right: 30px;
+  top: 530px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_QingDai {
+  left: 20px;
+  top: 260px;
+}
+#Part_1 .map_box_xiujianjifazhan #history_XinZhongGuo {
+  left: 20px;
+  bottom: 80px;
+}
+#Part_1 .caption_chuanzhizaihuo {
+  width: 1000px;
+}
+#Part_1 .chart_box_chuanzhizaihuo {
+  width: 1000px;
+  height: 750px;
+  position: relative;
+}
+#Part_1 .chart_box_chuanzhizaihuo .ship_cargo_tit {
+  width: 200px;
+  height: 42px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+}
+#Part_1 .chart_box_chuanzhizaihuo .ship_cargo_txt {
+  width: 140px;
+  height: 46px;
+  position: absolute;
+  right: 106px;
+  top: 100px;
+}
+#Part_1 .chart_box_chuanzhizaihuo .ship_cargo_xaxis {
+  width: 937px;
+  height: 147px;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+#Part_1 .chart_box_chuanzhizaihuo #shipCargo {
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  bottom: 123px;
+  left: 40px;
+}
+#Part_1 .part1_yinshuichuanhe_box {
+  width: 100%;
+  height: 1580px;
+  background: url(../img/part1_yinshuichuanhe_box.png) no-repeat center / contain;
+  position: relative;
+}
+#Part_1 .part1_yinshuichuanhe_box .map_box {
+  width: 720px;
+  position: absolute;
+}
+#Part_1 .part1_yinshuichuanhe_box .map_box .map_img {
+  width: 690px;
+}
+#Part_1 .part1_yinshuichuanhe_box .map_box_baifuquanyinshui {
+  left: 0;
+  top: 0px;
+}
+#Part_1 .part1_yinshuichuanhe_box .map_box_nanwangshuili {
+  right: 0;
+  bottom: 0;
+}
+#Part_1 .part1_yinshuichuanhe_box .txt_box {
+  width: 240px;
+  position: absolute;
+}
+#Part_1 .part1_yinshuichuanhe_box .txt_box_ysch_1 {
+  right: 120px;
+  top: 100px;
+}
+#Part_1 .part1_yinshuichuanhe_box .txt_box_ysch_2 {
+  left: 120px;
+  bottom: 200px;
+}
+#Part_1 .pic_box_chuanzha {
+  width: 1000px;
+}
+#Part_1 .pic_box_chuanzha .pic_chuanzha {
+  width: 970px;
+}
+#Part_1 .part1_nanshuibeidiao_box {
+  width: 100%;
+  height: 900px;
+  position: relative;
+}
+#Part_1 .part1_nanshuibeidiao_box .map_box_nanshuibeidiao {
+  width: 600px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#Part_1 .part1_nanshuibeidiao_box .map_box_nanshuibeidiao .map_img {
+  width: 570px;
+}
+#Part_1 .part1_nanshuibeidiao_box .txt_box_nsbd {
+  width: 400px;
+  position: absolute;
+  right: 150px;
+  top: 120px;
+}
+#Part_2 .pic_luhe {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#Part_2 .caption_luhe {
+  width: 1000px;
+}
+#Part_2 .part2_liujingchengshi_box {
+  width: 100%;
+  height: 990px;
+  position: relative;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi {
+  width: 600px;
+  height: 844px;
+  background: url(../img/map_liujingchengshi.jpg) no-repeat center / contain;
+  position: relative;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .dot_city {
+  width: 20px;
+  height: 20px;
+  animation-duration: 2s;
+  position: absolute;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_BeiJing {
+  width: 22px;
+  height: 22px;
+  left: 246px;
+  top: 150px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_Tianjin {
+  left: 282px;
+  top: 189px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_CangZhou {
+  left: 271px;
+  top: 239px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_DeZhou {
+  left: 250px;
+  top: 286px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_LiaoCheng {
+  left: 231px;
+  top: 321px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_TaiAn {
+  left: 281px;
+  top: 353px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_JiNing {
+  left: 272px;
+  top: 396px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_ZaoZhuang {
+  left: 308px;
+  top: 425px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_XuZhou {
+  left: 303px;
+  top: 457px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_SuQian {
+  right: 227px;
+  bottom: 355px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_HuaiAn {
+  right: 183px;
+  bottom: 332px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_YangZhou {
+  right: 168px;
+  bottom: 274px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_ZhenJiang {
+  right: 160px;
+  bottom: 255px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_ChangZhou {
+  right: 144px;
+  bottom: 246px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_WuXi {
+  right: 126px;
+  bottom: 236px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_SuZhou {
+  right: 112px;
+  bottom: 225px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_JiaXing {
+  right: 106px;
+  bottom: 208px;
+}
+#Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .map_bg_liujingchengshi .city_HangZhou {
+  right: 130px;
+  bottom: 168px;
+}
+#Part_2 .part2_liujingchengshi_box .chart_box_humantrade {
+  width: 700px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+#Part_2 .part2_liujingchengshi_box .chart_box_humantrade .chart_title {
+  height: 60px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  color: #4A889A;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 60px;
+}
+#Part_2 .part2_liujingchengshi_box .chart_box_humantrade .chart_title .title_city {
+  color: #4A889A;
+  font-size: 32px;
+  font-weight: 600;
+}
+#Part_2 .part2_liujingchengshi_box .chart_box_humantrade .chart_humantrade {
+  width: 690px;
+  height: 360px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#Part_2 .part2_liujingchengshi_box .chart_box_humantrade .data_sources {
+  width: 95%;
+  height: 20px;
+  color: #666666;
+  font-size: 14px;
+  text-align: right;
+  line-height: 14px;
+}
+#Part_2 .caption_jiangsuhuoyun {
+  width: 700px;
+}
+#Part_2 .chart_box_jiangsuhuoyun {
+  width: 700px;
+}
+#Part_2 .chart_box_jiangsuhuoyun #jiangsuTransport {
+  height: 400px;
+}
+#Part_3 .part3_guojiajifeiyi_box {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 70px;
+}
+#Part_3 .part3_guojiajifeiyi_box .chart_img_box_guojiajifeiyi {
+  width: 720px;
+  position: absolute;
+}
+#Part_3 .part3_guojiajifeiyi_box .chart_img_box_guojiajifeiyi .chart_img_guojiajifeiyi {
+  width: 690px;
+}
+#Part_3 .part3_guojiajifeiyi_box .txt_box_guojiajifeiyi {
+  width: 280px;
+  position: absolute;
+  right: 120px;
+  top: 50px;
+}
+#Part_3 .part3_huanghebushui_box {
+  width: 100%;
+  height: 860px;
+  position: relative;
+  margin-bottom: 70px;
+}
+#Part_3 .part3_huanghebushui_box .map_box_nanshuibeidiao {
+  width: 720px;
+  position: absolute;
+}
+#Part_3 .part3_huanghebushui_box .map_box_nanshuibeidiao .map_huanghebushui {
+  width: 690px;
+}
+#Part_3 .part3_huanghebushui_box .txt_box_huanghebushui {
+  width: 280px;
+  position: absolute;
+  right: 120px;
+  top: 200px;
+}
+#Part_3 .scroll_box {
+  width: 100%;
+  height: 600px;
+  background-color: #FFFFFF;
+  border: 3.2px solid #1E7386;
+  box-shadow: 6px 6px 10px rgba(30, 115, 128, 0.75);
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: 70px;
+}
+#Part_3 .scroll_box .scroll_img {
+  width: 100%;
+}
+#Part_3 .scroll_box::-webkit-scrollbar {
+  width: 10px;
+}
+#Part_3 .scroll_box::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(30, 115, 128, 0.6);
+}
+#Part_3 .scroll_box:hover::-webkit-scrollbar-thumb {
+  background-color: #1e7380;
+}
+#Part_3 .scroll_box::-webkit-scrollbar-track {
+  background-color: rgba(30, 115, 128, 0.3);
+}
+#Part_3 .caption_difangxingdong {
+  width: 100%;
+}
+#Part_3 .part3_difangxingdong_box {
+  width: 100%;
+  height: 960px;
+  position: relative;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong {
+  width: 623px;
+  position: absolute;
+  left: 0;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong {
+  width: 594px;
+  height: 850px;
+  background: url(../img/map_bg_difangxingdong.png) no-repeat center / contain;
+  position: relative;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong .point_place {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong .p_place_1 {
+  width: 40px;
+  height: 40px;
+  left: 267px;
+  top: 182px;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong .p_place_2 {
+  left: 191px;
+  top: 194px;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong .p_place_3 {
+  left: 131px;
+  bottom: 323px;
+}
+#Part_3 .part3_difangxingdong_box .map_box_difangxingdong .map_bg_difangxingdong .p_place_4 {
+  right: 96px;
+  bottom: 78px;
+}
+#Part_3 .part3_difangxingdong_box .policy_box {
+  width: 510px;
+  background-color: #FFFFFF;
+  right: 0;
+}
+#Part_3 .part3_difangxingdong_box .policy_box .policy_place {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+#Part_3 .part3_difangxingdong_box .policy_box .policy_action {
+  font-size: 20px;
+  text-align: justify;
+  line-height: 30px;
+}
+#Part_3 .part3_difangxingdong_box .policy_line_box {
+  width: 700px;
+  height: 16px;
+  background: url(../img/point_line_1.png) no-repeat left center / contain;
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+#Part_3 .part3_difangxingdong_box .policy_line_box .po_box_tianjin {
+  right: -180px;
+  bottom: -5px;
+}
+#Part_3 .part3_difangxingdong_box .policy_line_box .po_box_hebei {
+  right: -247px;
+  top: -5px;
+}
+#Part_3 .part3_difangxingdong_box .policy_line_box .po_box_henan {
+  right: -305px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+#Part_3 .part3_difangxingdong_box .policy_line_box .po_box_zhejiang {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+#Part_3 .part3_difangxingdong_box #policy_TianJin {
+  left: 294px;
+  top: 273px;
+}
+#Part_3 .part3_difangxingdong_box #policy_HeBei {
+  left: 227px;
+  top: 313px;
+}
+#Part_3 .part3_difangxingdong_box #policy_HeNan {
+  left: 169px;
+  top: 586px;
+}
+#Part_3 .part3_difangxingdong_box #policy_ZheJiang {
+  left: 474px;
+  top: 831px;
+}
+#Part_3 .part3_difangxingdong_box #policyGuoJia {
+  left: 664px;
+  top: 84px;
+}
+#Part_3 .video_box {
+  width: 1024px;
+  height: 576px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+#Part_3 .video_box .dyh_video {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+#Part_3 .video_box .play_btn {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -90px;
+  margin-top: -90px;
+}
+#Part_3 .caption_dayunhewenhua {
+  width: 1024px;
+}
+#Part_3 .pic_show {
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#Part_3 .pic_show .pic_show_box {
+  width: 360px;
+  margin-bottom: 70px;
+}
+#Part_3 .pic_show .pic_show_box .picture {
+  display: block;
+  width: 360px;
+  height: 279px;
+  border: 2px solid #1E7380;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#Part_3 .pic_show .pic_show_box .txt_box {
+  width: 360px;
+  height: 120px;
+  background-color: #FFFFFF;
+  border: 2px solid #1E7380;
+  padding: 10px 15px;
+  margin: 0 auto;
+}
+#Part_3 .pic_show .pic_show_box .txt_box .words {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 30px;
+}
+#Part_3 .pic_show .pic_show_box .txt_box_culture {
+  height: 150px;
+}
+#Part_3 .pic_box_beijingshengtai {
+  width: 1000px;
+}
+#Part_3 .pic_box_beijingshengtai .pic_beijingshengtai {
+  width: 970px;
+}
+#Part_3 .pic_sw_culture {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.author_datum {
+  width: 100%;
+  border: 1.6px dashed #1E7380;
+  padding: 20px 15px;
+  margin: 0 auto;
+}
+.author_datum .tit_datum {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.author_datum .datum_box {
+  height: 150px;
+  margin-bottom: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.author_datum .datum_box .da_txt {
+  color: #666666;
+  font-size: 14px;
+}
+.author_datum .datum_box::-webkit-scrollbar {
+  width: 2px;
+}
+.author_datum .datum_box::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 115, 128, 0.4);
+}
+.author_datum .datum_box:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 115, 128, 0.8);
+}
+.author_datum .datum_box::-webkit-scrollbar-track {
+  background-color: rgba(30, 115, 128, 0.1);
+}
+.author_datum .author_producer .au_txt {
+  color: #666666;
+  font-size: 14px;
+  line-height: 0.4rem;
+}
+@media screen and (max-width: 1300px) {
+  .wrapper {
+    width: 1024px;
+  }
+  #Part_0 .part0_dayunhe_box {
+    height: 620px;
+  }
+  #Part_0 .part0_dayunhe_box .map_dayunhe {
+    width: 430px;
+    height: 600px;
+  }
+  #Part_0 .part0_dayunhe_box .pic_painting {
+    width: 570px;
+    height: 285px;
+  }
+  #Part_0 .part0_dayunhe_box .txt_bub {
+    width: 620px;
+    height: 280px;
+    background: url(../img/txt_bub_2.png) no-repeat center / contain;
+    bottom: 10px;
+  }
+  #Part_0 .part0_dayunhe_box .txt_bub .txt_box {
+    width: 440px;
+    right: 60px;
+    top: 55px;
+  }
+  #Part_1 .part1_yinshuichuanhe_box .txt_box {
+    width: 200px;
+    position: absolute;
+  }
+  #Part_1 .part1_yinshuichuanhe_box .txt_box_ysch_1 {
+    right: 30px;
+    top: 30px;
+  }
+  #Part_1 .part1_yinshuichuanhe_box .txt_box_ysch_2 {
+    left: 30px;
+  }
+  #Part_1 .part1_nanshuibeidiao_box .txt_box_nsbd {
+    width: 300px;
+    position: absolute;
+    right: 40px;
+    top: 50px;
+  }
+  #Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi {
+    left: -200px;
+  }
+  #Part_2 .part2_liujingchengshi_box .map_box_liujingchengshi .common_tit_liujingchengshi {
+    margin-left: 250px;
+  }
+  #Part_3 .part3_guojiajifeiyi_box {
+    height: 400px;
+  }
+  #Part_3 .part3_guojiajifeiyi_box .chart_img_box_guojiajifeiyi {
+    width: 690px;
+  }
+  #Part_3 .part3_guojiajifeiyi_box .chart_img_box_guojiajifeiyi .chart_img_guojiajifeiyi {
+    width: 660px;
+  }
+  #Part_3 .part3_guojiajifeiyi_box .txt_box_guojiajifeiyi {
+    width: 220px;
+    right: 50px;
+    top: 50px;
+  }
+  #Part_3 .part3_huanghebushui_box {
+    height: 860px;
+  }
+  #Part_3 .part3_huanghebushui_box .map_box_nanshuibeidiao {
+    width: 690px;
+  }
+  #Part_3 .part3_huanghebushui_box .map_box_nanshuibeidiao .map_huanghebushui {
+    width: 660px;
+  }
+  #Part_3 .part3_huanghebushui_box .txt_box_huanghebushui {
+    width: 220px;
+    right: 50px;
+    top: 200px;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_box {
+    width: 400px;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_line_box {
+    background: url(../img/point_line_2.png) no-repeat left center / contain;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_line_box .po_box_tianjin {
+    right: 20px;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_line_box .po_box_hebei {
+    right: -47px;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_line_box .po_box_henan {
+    right: -105px;
+  }
+  #Part_3 .part3_difangxingdong_box .policy_line_box .po_box_zhejiang {
+    right: 200px;
+  }
+  #Part_3 .part3_difangxingdong_box #policyGuoJia {
+    left: 576px;
+    top: 80px;
+  }
+  #Part_3 .pic_show {
+    height: 400px;
+  }
+  #Part_3 .pic_show .pic_show_box {
+    width: 360px;
+  }
+  #Part_3 .pic_show .pic_show_box .picture {
+    width: 320px;
+    height: 248px;
+  }
+  #Part_3 .pic_show .pic_show_box .txt_box {
+    width: 320px;
+    height: 100px;
+  }
+  #Part_3 .pic_show .pic_show_box .txt_box .words {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  #Part_3 .pic_show .pic_show_box .txt_box_culture {
+    height: 120px;
+  }
+}

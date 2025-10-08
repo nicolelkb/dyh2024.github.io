@@ -1,0 +1,162 @@
+/*css 初始化 */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  /*字体设置*/
+  font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  /*清除默认 点击高亮效果*/
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  /*让元素 优先考虑区域大小*/
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  /* 禁止选中文本（如无文本选中需求，此为必选项） */
+}
+/*各浏览器显示不同,去掉蓝色边框*/
+fieldset,
+img,
+canvas,
+input,
+button {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  outline-style: none;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+/*统一组合框的默认样式*/
+input {
+  outline: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  /*去除input默认样式*/
+}
+textarea {
+  resize: none;
+  /*防止拖动 影响布局*/
+  outline: none;
+  /*textarea的聚焦时现在默认边框颜色不变 */
+  border: none;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  /*去除手机浏览器input、textarea焦点默认边框*/
+}
+select,
+input,
+button {
+  vertical-align: middle;
+}
+select,
+input,
+textarea {
+  margin: 0;
+}
+/*去掉行内替换元素空白缝隙*/
+img {
+  border: 0;
+  vertical-align: middle;
+}
+table {
+  border: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table td {
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select {
+  -webkit-appearance: none;
+  /*清除iOS的默认按钮样式*/
+}
+input::-webkit-input-placeholder {
+  color: #000;
+}
+button,
+select:focus {
+  outline: none;
+  -webkit-appearance: none;
+}
+a,
+img {
+  -webkit-touch-callout: none;
+  /* 禁止长按链接与图片弹出菜单 */
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+s,
+i,
+em {
+  font-style: normal;
+  text-decoration: none;
+}
+/*★公共类*/
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+  /*IE/7/6*/
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.al {
+  text-align: left;
+}
+.ac {
+  text-align: center;
+}
+.ar {
+  text-align: right;
+}
+.hide {
+  display: none;
+}
+.red {
+  color: red;
+}
